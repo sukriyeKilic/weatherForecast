@@ -1,0 +1,27 @@
+ext.versions = [
+        gradlePlugin       : '2.3.3',
+        compileSdk         : 26,
+        buildTools         : '26.0.0',
+        minSdk             : 14,
+        targetSdk          : 26,
+
+        play               : '9.6.0',
+
+        code               : 1,
+        name               : '1.0',
+
+        multidex           : '1.0.1',
+        supportLib         : '26.1.0',
+        dagger             : '2.2',
+        rxjava             : '1.0.+',
+        rxandroid          : '0.23.+',
+
+        retrofit           : '2.3.0',
+        okhttp3            : '3.8.0',
+        okhttp             : '2.2.0',
+        gson               : '2.8.0',
+
+        picasso            : '2.5.2'
+
+
+]

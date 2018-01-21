@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+    defaultConfig {
+        applicationId "com.mobven.weatherforecast"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.code
+        versionName versions.name
+
+        multiDexEnabled true
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "WEATHER_API_KEY", "\"c866ebaa4f9c07ff806da6d77ecef5c5\""
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile 'com.android.support:appcompat-v7:' + versions.supportLib
+    compile 'com.android.support:design:' + versions.supportLib
+    compile 'com.google.android.gms:play-services:' + versions.play
+
+    compile 'com.google.code.gson:gson:' + versions.gson
+
+    compile 'io.reactivex:rxjava:' + versions.rxjava
+    compile 'io.reactivex:rxandroid:' + versions.rxandroid
+
+    compile 'com.squareup.retrofit2:retrofit:' + versions.retrofit
+    compile 'com.squareup.retrofit2:converter-gson:' + versions.retrofit
+    compile 'com.squareup.retrofit2:converter-scalars:' + versions.retrofit
+
+    compile 'com.squareup.okhttp3:logging-interceptor:' + versions.okhttp3
+    compile 'com.squareup.okhttp3:okhttp:' + versions.okhttp3
+    compile 'com.squareup.okhttp3:okhttp-urlconnection:' + versions.okhttp3
+
+    compile 'com.squareup.okhttp:okhttp:' + versions.okhttp
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    compile 'com.google.dagger:dagger:' + versions.dagger
+    apt 'com.google.dagger:dagger-compiler:' + versions.dagger
+
+    compile 'com.android.support:multidex:' + versions.multidex
+
+    compile 'com.squareup.picasso:picasso:' + versions.picasso
+
+}

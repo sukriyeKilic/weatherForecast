@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">weatherforecast</string>
+    <string name="loading">Lütfen Bekleyiniz...</string>
+    <string name="wifi_status">Wi-Fi\nAçık/Kapalı</string>
+    <string name="save">KAYDET</string>
+    <string name="battery_status">Pil Durumu:</string>
+    <string name="location">Lokasyona Göre Seç</string>
+    <string name="max_temperature">En Yüksek sıcaklık</string>
+    <string name="min_temperature">En Düşük Sıcaklık</string>
+</resources>
