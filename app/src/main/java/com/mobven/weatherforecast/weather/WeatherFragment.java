@@ -123,7 +123,7 @@ public class WeatherFragment extends BaseFragment implements WeatherPresenter.We
             for (CityConstant constant : CityConstant.values()) {
                 dbCity.addCity(new City(constant.getPlateNum(), constant.getCityName(), constant.getCityCode(), 0));
             }
-            selectedCityList.add(new City("35", "İzmir", "311046", 0));
+
         } else {
             selectedCityList.clear();
             for (City c : dbCity.getAllCity()) {
@@ -139,6 +139,10 @@ public class WeatherFragment extends BaseFragment implements WeatherPresenter.We
         for (City c : dbCity.getAllCity()) {
             if (c.getSelect() == 1)
                 selectedCityList.add(c);
+        }
+
+        if (selectedCityList.size() == 0) {
+            selectedCityList.add(new City("35", "İzmir", "311046", 0));
         }
         mWeatherPresenter.getWeatherCityList(selectedCityList);
         if (mActivity.sharedPreference.isLocationActive()) {
